@@ -25,16 +25,9 @@ jobs:
         with:
           path: "conc"
 
-      - name: "info"
-        run: |
-          pwd
-          ls
-          cd conc
-          pwd
-          ls
-
       - name: "Merge to main HEAD"
         run: |
+          set -v
           cd conc
           git branch
           git remote -v
