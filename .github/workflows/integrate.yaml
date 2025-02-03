@@ -21,27 +21,25 @@ jobs:
           - "en"
 
     steps:
-      - name: "Checkout"
+      - name: "checkout"
         uses: "actions/checkout@v4"
         with:
           path: "conc"
 
-      - name: "env"
-        run: env
-
-      - name: "ls"
-        run: ls
-
-      - name: "Merge to master HEAD"
+      - name: "info"
         run: |
+          pwd
           ls
           cd conc
+          pwd
           ls
-          echo === show
-          git show HEAD
-          echo === log
-          git log -n 2
-          echo === merge
+          git log -n 3 --oneline
+
+      - name: "Merge to main HEAD"
+        run: |
+          cd conc
+          git branch
+          git remotes -v
           git merge --no-ff --no-commit origin/master
           git reset
           git diff
