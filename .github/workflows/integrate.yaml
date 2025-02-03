@@ -24,6 +24,7 @@ jobs:
         uses: "actions/checkout@v4"
         with:
           path: "conc"
+          fetch-depth: 0
 
       - name: "Merge to main HEAD"
         run: |
