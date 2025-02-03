@@ -29,10 +29,17 @@ jobs:
         run: |
           set -v
           cd conc
+
           git branch
           git remote -v
           git log -n 3 --oneline
-          echo === merge
+
+          git fetch origin master
+
+          git branch
+          git remote -v
+          git log -n 3 --oneline
+
           git merge --no-ff --no-commit origin/master
           git reset
           git diff
