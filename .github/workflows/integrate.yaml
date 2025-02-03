@@ -39,7 +39,7 @@ jobs:
         run: |
           cd conc
           git branch
-          git remotes -v
+          git remote -v
           git merge --no-ff --no-commit origin/master
           git reset
           git diff
