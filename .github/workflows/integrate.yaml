@@ -41,6 +41,6 @@ jobs:
           git remote -v
           git log -n 3 --oneline
 
-          git merge --no-ff --no-commit origin/master
+          git -c user.email="()" -c user.name="()" merge --no-ff --no-commit origin/master
           git reset
           git diff
