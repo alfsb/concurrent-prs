@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         language:
-          - "de"
           - "en"
 
     steps:
@@ -33,13 +32,14 @@ jobs:
           cd conc
           pwd
           ls
-          git log -n 3 --oneline
 
       - name: "Merge to main HEAD"
         run: |
           cd conc
           git branch
           git remote -v
+          git log -n 3 --oneline
+          echo === merge
           git merge --no-ff --no-commit origin/master
           git reset
           git diff
